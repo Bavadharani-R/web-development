@@ -1,4 +1,4 @@
-const apiKey = "7c80de90"; // Correctly use just the API key
+const apiKey = "7c80de90"; 
 const searchInput = document.getElementById("searchInput");
 const movieContainer = document.getElementById("movieContainer");
 
