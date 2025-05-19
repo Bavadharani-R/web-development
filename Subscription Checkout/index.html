@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Upgrade to Plus</h2>
+            <p>Upgrade today and take your AI-powered productivity to the next level.</p>
+
+            <label>Billed to</label>
+            <input type="text" placeholder="Enter name" />
+
+            <label>Payment Details</label>
+            <div class="tabs">
+                <button>💳 Credit Card</button>
+                <button>🏦 Bank Transfer</button>
+                <button>💎 Points</button>
+            </div>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email address" />
+
+            <div style="display: flex; gap: 1rem;">
+                <div style="flex: 1;">
+                    <label>Country</label>
+                    <select>
+                        <option>Finland</option>
+                        <option>Germany</option>
+                        <option>USA</option>
+                        <option>India</option>
+                        <option>China</option>
+                    </select>
+                </div>
+                <div style="flex: 1;">
+                    <label>Postal Code</label>
+                    <input type="text" placeholder="00270" />
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="cancel">Cancel</button>
+                <button class="subscribe">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h3>Starter Plan</h3>
+            <label><input type="radio" name="plan" checked /> Pay Monthly - $20/Member</label><br>
+            <label><input type="radio" name="plan" /> Pay Annual - $16/Member</label>
+
+            <hr />
+            <p><strong>Total:</strong> $20 / Month</p>
+        </div>
+    </div>
+</body>
+
+</html>
