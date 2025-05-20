@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR CODE GENERATOR</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="logo-text">
+    <img src="qrlogo.png" alt="QR Logo" />
+    <div class="input">
+      <input type="text" id="qr-input" placeholder="Enter your link" />
+      <button id="generate-btn">GENERATE</button>
+    </div>
+  </div>
+
+  <div class="qr" id="qr"></div>
+  <button class="download" id="download-btn" style="display: none;">Download</button>
+
+  <script>
+    const generateBtn = document.getElementById('generate-btn');
+    const downloadBtn = document.getElementById('download-btn');
+    const qrContainer = document.getElementById('qr');
+    const input = document.getElementById('qr-input');
+    let qrCode;
+
+    generateBtn.addEventListener('click', () => {
+      const text = input.value.trim();
+      qrContainer.innerHTML = ''; // Clear previous QR
+      if (text !== '') {
+        qrCode = new QRCode(qrContainer, {
+          text: text,
+          width: 200,
+          height: 200
+        });
+        downloadBtn.style.display = 'inline-block'; // Show download button
+      }
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      const img = qrContainer.querySelector('img');
+      if (img) {
+        const link = document.createElement('a');
+        link.href = img.src;
+        link.download = 'qr-code.png';
+        link.click();
+      }
+    });
+  </script>
+</body>
+</html>
